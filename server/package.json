@@ -5,10 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc", 
+    "build": "tsc",
     "start": "node dist/index.js",
-    "dev": "nodemon",
-    "dev:tsx": "tsx watch src/index.ts",
+    "dev": "nodemon --exec \"tsx api/index.ts\" --watch api --ext ts,js,json",
+    "dev:tsx": "tsx watch api/index.ts",
     "vercel-build": "tsc"
   },
   "keywords": [],
@@ -25,6 +25,7 @@
   "devDependencies": {
     "@types/express": "^5.0.3",
     "@types/node": "^24.0.14",
+    "nodemon": "^3.1.10",
     "ts-node": "^10.9.2",
     "tsx": "^4.20.3",
     "typescript": "^5.8.3"
